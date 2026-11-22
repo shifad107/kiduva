@@ -1,0 +1,1 @@
+import {signedSession} from '../_auth.js';export default function handler(req,res){res.setHeader('Cache-Control','no-store');res.json({authenticated:signedSession(req),shopifyConfigured:!!(process.env.SHOPIFY_SHOP_DOMAIN&&process.env.SHOPIFY_ADMIN_ACCESS_TOKEN)});}
