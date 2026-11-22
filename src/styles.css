@@ -227,3 +227,6 @@ footer .official-logo{width:210px;background:#fff;border-radius:12px;padding:5px
 .side-official-logo{display:block;width:100%;max-width:185px;height:auto;max-height:96px;object-fit:contain;background:white;border-radius:13px;padding:7px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
 .side-logo small{display:block;letter-spacing:2px;color:#d2dcf2;font:900 9px Nunito,sans-serif;text-align:center}
 @media(max-width:760px){.side-logo{display:none}}
+
+/* Keep the uploaded KIDUVA cloud outline visible without any rectangular badge */
+.side-official-logo{background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;box-shadow:none!important;object-fit:contain!important;filter:none!important}
