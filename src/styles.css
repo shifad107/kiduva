@@ -4,3 +4,55 @@
 @media(max-width:1050px){.header{padding:0 3%}.header nav{gap:10px}.header nav button{font-size:10px}.section{padding:60px 4%}.cats img{height:210px}.product-image{height:250px}}
 @media(max-width:760px){.header{height:70px;gap:8px}.hamb{display:block;border:0;background:none;color:#17345f}.header nav{display:none}.logo{font-size:24px}.headtools{gap:5px}.headtools label{width:35px;padding:8px;border:0}.headtools label input{width:0}.hero{height:490px}.hero-copy{left:7%;right:7%}.hero h1{font-size:49px}.sticker{width:75px;height:75px;right:5%;bottom:20px;font-size:9px}.sticker b{font-size:15px}.trust{gap:12px;flex-wrap:wrap;font-size:9px}.section{padding:50px 5%}.section-title h2,.newsletter h2{font-size:30px}.cats{grid-template-columns:repeat(2,1fr);gap:10px}.cats img{height:190px}.products{grid-template-columns:repeat(2,1fr);gap:12px}.product-image{height:220px}.quick{transform:none}.story{grid-template-columns:1fr}.story img{height:260px}.story>div{padding:38px 8%}.newsletter form{max-width:95%}.shop{padding:40px 5%}.shop h1{font-size:34px}.admin{padding:17px 10px}.admin-grid{grid-template-columns:1fr}.side{min-height:0;flex-direction:row;overflow-x:auto;padding:8px}.side-logo,.side .return{display:none}.side>button{font-size:0;padding:11px}.side>button svg{width:18px}.stats{grid-template-columns:repeat(2,1fr);gap:8px}.stats>div{padding:13px}.stats strong{font-size:25px}.welcome{align-items:flex-start;gap:8px}.welcome h2{font-size:18px}.welcome .pill{font-size:9px;padding:10px}.inventory-row{gap:7px}.inventory-row>img{width:32px;height:36px}.inventory-row .good,.inventory-row .low,.inventory-row .out{font-size:7px}.panel{padding:13px}.table-wrap{margin:0 -5px}.modal{padding:22px}.admin-head h1{font-size:27px}}
 @media(max-width:390px){.hero h1{font-size:42px}.product-image{height:185px}.cats img{height:165px}.inventory-row>strong{display:none}}
+
+
+/* KIDUVA editorial storefront refresh */
+:root{--k-navy:#123765;--k-blue:#22599d;--k-pink:#ed4c91;--k-cream:#fffaf6}
+body{background:#fffdfc}
+.topline{background:#163f74;letter-spacing:1.3px}
+.announcement{background:#fce6ed;color:#8b385f;padding:11px}
+.header{background:#fff;box-shadow:0 6px 26px rgba(20,51,94,.045);position:relative;z-index:4}
+.header nav button{transition:color .2s}.header nav button:hover{color:#ec4d8d}
+.logo{line-height:1;white-space:nowrap}.brand-name{font-family:Fredoka,sans-serif;font-weight:600;color:#123d72;letter-spacing:-1px}.brand-k{color:#f4b72c!important;font-size:1.17em;letter-spacing:-4px;text-shadow:2px 1px #0d3769}.brand-dot{color:#e93f87!important;font-size:.75em;letter-spacing:-1px}.logo small{font-size:9px;letter-spacing:.5px;text-transform:none;color:#24517e;font-weight:900;margin-top:8px}
+.hero{height:min(620px,68vw);min-height:510px;background:#f8edf0}
+.hero>img{object-position:center 38%;filter:saturate(.84)}
+.shade{background:linear-gradient(90deg,rgba(19,45,80,.95) 0%,rgba(19,45,80,.82) 34%,rgba(19,45,80,.30) 64%,rgba(19,45,80,.04) 100%)}
+.hero-copy{max-width:590px;left:8%}
+.hero-copy>small{display:inline-block;color:#ffdbe7;background:#ffffff1d;border:1px solid #ffffff3b;border-radius:40px;padding:10px 14px;letter-spacing:1.8px}
+.hero h1{font-size:clamp(52px,5.3vw,86px);line-height:1.05;letter-spacing:-2.5px;margin:20px 0}
+.hero h1 em{color:#ffb7d0}
+.hero-copy p{font-size:16px;line-height:1.85;max-width:470px;color:#fff8fb}
+.hero-buttons{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-top:26px}
+.hero .pill{background:#ee5492;box-shadow:0 5px 0 #ad2e63;padding:16px 24px;font-size:13px}
+.hero-secondary{background:transparent;border:1.5px solid #ffffffa8;border-radius:35px;color:#fff;padding:14px 20px;font-weight:900;font-size:12px}
+.sticker{background:#fff2c8;color:#194675;box-shadow:0 8px 0 #e9bf74;right:7%;bottom:28px;transform:rotate(9deg);width:125px;height:125px}
+.sticker b{font-size:18px}
+.trust{background:#fff9f5;gap:6%;border-bottom:1px solid #f6e6e3;padding:21px}
+.trust svg{color:#eb5894}
+.section{padding-top:84px;padding-bottom:86px}
+.section-title h2{font-size:clamp(30px,3.3vw,47px);letter-spacing:-.7px}
+.section-title small{color:#ed5692}
+.section-title>button{color:#e04b88}
+.cats{gap:22px}
+.cats button{background:#fff;border:1px solid #f3e9e8;box-shadow:0 8px 22px rgba(25,50,83,.055);transition:transform .2s,box-shadow .2s;border-radius:22px}
+.cats button:hover{transform:translateY(-5px);box-shadow:0 15px 32px rgba(25,50,83,.12)}
+.cats img{height:260px}
+.cats b{font-size:21px}
+.cats small{font-size:11px}
+.blush{background:linear-gradient(180deg,#fff7fa,#fffaf8)}
+.product-card{transition:transform .2s}.product-card:hover{transform:translateY(-4px)}
+.product-image{border-radius:21px;height:320px}
+.product-info h3{font-size:19px}
+.product-info>b{font-size:16px;color:#184c88}
+.heart{box-shadow:0 2px 12px #20304c12}
+.quick{background:#17477f;color:white;border-radius:0 0 18px 18px}
+.story{background:#fff0f4}
+.story h2{font-size:clamp(38px,4vw,60px)}
+.newsletter{background:linear-gradient(120deg,#fff3f6,#fff9ee)}
+.newsletter input{background:white}
+footer .brand-name{color:#fff}
+footer .brand-k{color:#ffd15a!important}
+footer .logo small{color:#ffdce8}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #e95591;outline-offset:3px}
+@media(max-width:760px){.header{padding:0 4%}.logo{font-size:25px}.logo small{font-size:7px}.hero{min-height:550px;height:70vh}.hero>img{object-position:58% center}.shade{background:linear-gradient(90deg,#15355eeb 0%,#15355eaa 65%,#15355e33)}.hero-copy{left:6%;right:6%;max-width:400px}.hero h1{font-size:clamp(46px,10vw,66px);letter-spacing:-1px}.hero-copy p{font-size:13px}.hero-secondary{font-size:11px}.hero .pill{font-size:11px;padding:13px 15px}.sticker{width:85px;height:85px;right:5%;bottom:14px}.sticker b{font-size:13px}.cats img{height:185px}.product-image{height:240px}.section{padding-top:54px;padding-bottom:58px}.trust{gap:12px}.story h2{font-size:42px}}
+@media(max-width:420px){.hero{min-height:590px}.hero h1{font-size:44px}.hero-copy{top:44%}.hero-buttons{gap:10px}.hero-secondary{padding:10px}.product-image{height:195px}.cats img{height:155px}.sticker{bottom:15px}}
