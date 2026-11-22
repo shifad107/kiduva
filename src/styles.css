@@ -205,3 +205,18 @@ footer .official-logo{width:210px;background:#fff;border-radius:12px;padding:5px
 .product-modal-photo{width:100%;height:auto!important;aspect-ratio:1.1;overflow:hidden}
 .product-modal-photo .product-sprite{background-size:540% auto!important;background-repeat:no-repeat!important;transform:none!important}
 @media(max-width:600px){.collection-product-grid .product-info{min-height:185px}.collection-product-grid .product-info .product-add-button{min-height:46px;font-size:9px}}
+
+
+/* KIDUVA demo administrator entry — NOT a production authentication scheme */
+.admin-login-panel{max-width:560px;margin:35px auto;padding:44px 34px;display:flex;flex-direction:column;align-items:stretch;gap:14px;text-align:left;box-shadow:0 15px 55px #19376812}
+.admin-login-panel h2{font:700 30px Fredoka;color:#17357e;text-align:center;margin:0}
+.admin-login-panel p{text-align:center;line-height:1.7;margin:0 0 10px;color:#687d9c;font-size:13px}
+.admin-login-panel label{font-size:12px;font-weight:900;color:#17357e}
+.admin-login-panel input{border:1px solid #d8e2ed;border-radius:15px;padding:15px 18px;font-size:15px;background:#fff;outline-color:#ed3d8f}
+.admin-login-panel>.pill{width:100%;box-shadow:none;padding:15px 20px}
+.admin-login-icon{height:66px;width:66px;display:grid;place-items:center;background:#fff0f6;border-radius:50%;margin:0 auto;color:#ed3d8f}
+.shopify-login-area{margin-top:16px;border-top:1px solid #e7edf3;padding-top:20px;display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center}
+.shopify-login-area small{font-size:11px;color:#71839a;max-width:370px;line-height:1.7}
+.shopify-login-area button{background:none;border:0;color:#174785;font-size:12px;text-decoration:underline;font-weight:900}
+.admin-signout{color:#ffd9e5!important;border-top:1px solid #ffffff30!important;margin-top:8px!important}
+@media(max-width:600px){.admin-login-panel{padding:30px 18px;margin:20px auto}.admin-login-panel h2{font-size:23px}}
