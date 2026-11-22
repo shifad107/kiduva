@@ -230,3 +230,25 @@ footer .official-logo{width:210px;background:#fff;border-radius:12px;padding:5px
 
 /* Keep the uploaded KIDUVA cloud outline visible without any rectangular badge */
 .side-official-logo{background:transparent!important;border:0!important;border-radius:0!important;padding:0!important;box-shadow:none!important;object-fit:contain!important;filter:none!important}
+
+
+/* Remove the rectangular white canvas around the admin logo.
+   The official source artwork is unchanged. The polygon follows its cloud silhouette. */
+.side-official-logo{
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  clip-path:polygon(
+    2% 31%, 5% 23%, 5% 15%, 10% 7%, 16% 4%, 22% 7%,
+    26% 12%, 31% 5%, 37% 5%, 43% 7%, 48% 7%,
+    53% 4%, 58% 5%, 63% 11%, 68% 8%, 73% 9%,
+    78% 13%, 83% 12%, 89% 17%, 93% 25%, 98% 29%,
+    99% 38%, 99% 66%, 96% 76%, 91% 84%, 85% 88%,
+    78% 87%, 73% 91%, 68% 88%, 63% 85%, 59% 91%,
+    52% 95%, 45% 92%, 41% 86%, 36% 85%, 30% 91%,
+    22% 89%, 15% 85%, 10% 85%, 5% 77%, 2% 66%,
+    1% 53%
+  )!important;
+}
