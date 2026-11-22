@@ -48,7 +48,7 @@ create or replace function public.kiduva_is_admin()
 returns boolean language sql stable security definer set search_path = ''
 as $$ select exists(select 1 from public.kiduva_admins where user_id=auth.uid()) $$;
 revoke all on function public.kiduva_is_admin() from public;
-grant execute on function public.kiduva_is_admin() to authenticated;
+grant execute on function public.kiduva_is_admin() to anon, authenticated;
 
 alter table public.kiduva_admins enable row level security;
 alter table public.kiduva_products enable row level security;
