@@ -1,14 +1,33 @@
-# KIDUVA production integration plan
+# KIDUVA Shopify deployment setup
 
-Current React UI is **sample mode**. It does not have secure admin authentication, persistent product data, image uploads, variant stock, real orders or payment processing.
+The `main` branch now contains **server-side Shopify Admin API routes**, an admin sign-in flow, catalogue reads and draft product create/update/delete operations, a size/colour **option creation endpoint**, location listing and inventory adjustment. The app still needs end-to-end testing with a real Shopify store. The interface is not production-ready.
 
-## Permanent product management
-A Postgres/Supabase starter schema is in `supabase/schema.sql`. It supports products, categories, product images, size+colour variants, role-gated admin access, and atomic audited stock adjustments. It is not deployed or wired to the UI. Before production: set up Supabase Auth, create the first super_admin using a verified user UUID, configure a private media-upload flow with restricted storage policies, add authenticated admin pages, test RLS and checkout concurrency.
+## Vercel environment variables (server-side only)
+- `SHOPIFY_SHOP_DOMAIN`: `your-store.myshopify.com`
+- `SHOPIFY_ADMIN_ACCESS_TOKEN`: token from a properly installed Shopify app with appropriate scopes; **never** prefix with `VITE_`
+- `ADMIN_PASSWORD`: randomly generated password, minimum 16 characters
+- `ADMIN_SESSION_SECRET`: independent cryptographically random secret, minimum 32 characters
 
-**Architecture decision:** Original requirements named Shopify as the product/inventory/order source of truth. If Shopify is retained, do **not** operate the Supabase catalogue as a second independent stock database. Instead, implement server-side Shopify Admin API writes and use Shopify inventory controls. Supabase may hold CMS data and admin app metadata. If replacing Shopify entirely, this Postgres schema can be expanded into the sole inventory backend with server-side reservation and order transactions.
+Deploy these as **server-side** Vercel environment variables. Never commit them or share them in chat. Shopify Admin API permissions must include products, inventory, and locations as required by the actual operations. Vercel functions must be enabled, and Shopify API schema/version compatibility must be verified against your store.
 
-## Razorpay: last phase
-Payment integration is intentionally pending. Production Razorpay requires an approved merchant account, credentials, backend-generated order, server-side signature verification, webhook signature validation, idempotent payment event handling, refund/reconciliation support, and fulfilment only after verified payment. Never put Razorpay key secrets in frontend variables. Do not enable checkout before legal, tax, shipping and inventory policies are ready.
+## Admin endpoints
+- `POST /api/admin/login`, `POST /api/admin/logout`, `GET /api/admin/session`
+- `GET/POST/PATCH/DELETE /api/admin/products`
+- `POST /api/admin/variants` currently creates Shopify size/colour **options only**, not inventory-bearing variants
+- `GET /api/admin/locations`
+- `POST /api/admin/inventory` adjusts a specific Shopify inventory item at a selected location
+- `GET /api/store/products` reads Shopify active products
 
-## Official logo
-The uploaded logo artwork must be copied as an **unchanged image asset** to `public/kiduva-logo.png` before it is used in the header and footer. Do not redraw or recreate it. The owner-supplied image has the tagline “Little Joys, Lovely Styles.”
+All Admin API calls are server-side. The storefront uses sample data until the Shopify connection succeeds. New products are created as **drafts** to avoid accidentally selling incomplete listings.
+
+## Must finish before launch
+1. Replace the temporary single-password admin login with identity-based accounts, MFA, role-based authorization, login rate limiting, CSRF protection, audit logs and safe session revocation. The current password login is a development bridge only.
+2. Complete Shopify variant bulk creation, editing and deletion, per-variant inventory adjustments, stock history and SKU validation.
+3. Complete secure image uploads using Shopify staged uploads and product media creation, with validation, limits and appropriate storage permissions. The current UI accepts image URLs only.
+4. Add product status/publish controls, categories/collections, order and customer views, cart and Shopify checkout.
+5. Test Shopify Admin GraphQL API version and mutations with your actual shop; errors must not be treated as successful writes.
+6. Use the exact owner-supplied original logo asset in `public/`; the existing temporary wordmark is **not** the official logo.
+7. Razorpay **last**: confirm whether Razorpay is supported for the merchant's Shopify checkout configuration. If supported, configure it through Shopify's approved payment integration. Do not create an independent Razorpay checkout that bypasses Shopify order and inventory accounting.
+
+## Security
+Do not put Shopify Admin tokens or Razorpay secrets in the browser. No live payment functionality is implemented. Do not accept real customer orders until checkout, privacy, shipping, taxes and inventory have been tested.
