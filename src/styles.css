@@ -252,3 +252,57 @@ footer .official-logo{width:210px;background:#fff;border-radius:12px;padding:5px
     1% 53%
   )!important;
 }
+
+
+/* Admin layout fix: align sidebar from top; keep header, notice and workspace on right */
+@media(min-width:761px){
+  .admin{
+    display:grid!important;
+    grid-template-columns:256px minmax(0,1fr)!important;
+    grid-template-rows:auto auto minmax(0,1fr)!important;
+    grid-template-areas:"sidebar heading" "sidebar notice" "sidebar workspace"!important;
+    gap:16px 26px!important;
+    align-items:start!important;
+    padding:24px clamp(16px,3vw,48px)!important;
+    max-width:1680px!important;
+    margin:0 auto!important;
+  }
+  .admin-grid{display:contents!important}
+  .admin .side{
+    grid-area:sidebar!important;
+    width:100%!important;
+    min-height:calc(100vh - 76px)!important;
+    align-self:stretch!important;
+    margin:0!important;
+    position:sticky;
+    top:20px;
+  }
+  .admin .admin-head{
+    grid-area:heading!important;
+    margin:0!important;
+    min-width:0;
+    padding:4px 2px 0!important;
+  }
+  .admin .warning{
+    grid-area:notice!important;
+    margin:0!important;
+    min-width:0;
+  }
+  .admin .admin-body{
+    grid-area:workspace!important;
+    min-width:0!important;
+    width:100%!important;
+    padding:0!important;
+    align-self:start;
+  }
+  .admin .admin-login-panel{margin:18px auto!important}
+}
+@media(max-width:760px){
+  .admin{display:flex!important;flex-direction:column!important;gap:12px!important;padding:16px 12px!important}
+  .admin .admin-head,.admin .warning{margin:0!important;width:100%!important}
+  .admin-grid{display:flex!important;flex-direction:column!important;gap:15px!important;min-width:0!important}
+  .admin .side{width:100%!important;min-height:0!important;position:static!important;display:flex!important;flex-direction:row!important;overflow-x:auto!important}
+  .admin .admin-body{width:100%!important;min-width:0!important}
+  .admin .admin-login-panel{margin:8px auto!important}
+  .admin-head h1{font-size:28px!important}
+}
