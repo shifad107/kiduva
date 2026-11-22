@@ -306,3 +306,52 @@ footer .official-logo{width:210px;background:#fff;border-radius:12px;padding:5px
   .admin .admin-login-panel{margin:8px auto!important}
   .admin-head h1{font-size:28px!important}
 }
+
+
+/* Admin brand lockup: centrally align the actual logo and its label.
+   Smooth mask replaces the visibly jagged polygon crop; the source logo is unchanged. */
+@media(min-width:761px){
+  .admin .side-logo{
+    width:100%;
+    padding:12px 7px 24px!important;
+    margin:0 auto 4px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:5px!important;
+    text-align:center!important;
+  }
+  .admin .side-official-logo{
+    width:100%!important;
+    max-width:212px!important;
+    height:auto!important;
+    max-height:none!important;
+    aspect-ratio:1000 / 400!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    display:block!important;
+    margin:0 auto!important;
+    padding:0!important;
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+    border-radius:0!important;
+    clip-path:none!important;
+    -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201000%20400%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M48%20169%20C22%20135%2045%20110%2063%2096%20C46%2062%2074%2030%20106%2026%20C133%206%20190%2010%20219%2034%20C246%204%20293%2015%20314%2037%20C367%2029%20431%2035%20476%2019%20C522%206%20560%2021%20581%2042%20C628%2017%20668%2030%20708%2047%20C764%2040%20823%2065%20852%2091%20C889%2072%20924%20105%20929%20126%20C977%20118%20998%20149%20986%20188%20C1014%20218%20984%20270%20963%20279%20C952%20312%20911%20331%20860%20324%20C830%20347%20779%20350%20744%20336%20C707%20363%20667%20350%20640%20339%20C596%20367%20551%20362%20517%20342%20C470%20367%20432%20365%20398%20345%20C352%20365%20306%20350%20270%20343%20C232%20354%20190%20350%20159%20328%20C119%20341%2077%20315%2070%20284%20C27%20281%2016%20226%2048%20169%20Z%22%2F%3E%3C%2Fsvg%3E")!important;
+    mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201000%20400%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M48%20169%20C22%20135%2045%20110%2063%2096%20C46%2062%2074%2030%20106%2026%20C133%206%20190%2010%20219%2034%20C246%204%20293%2015%20314%2037%20C367%2029%20431%2035%20476%2019%20C522%206%20560%2021%20581%2042%20C628%2017%20668%2030%20708%2047%20C764%2040%20823%2065%20852%2091%20C889%2072%20924%20105%20929%20126%20C977%20118%20998%20149%20986%20188%20C1014%20218%20984%20270%20963%20279%20C952%20312%20911%20331%20860%20324%20C830%20347%20779%20350%20744%20336%20C707%20363%20667%20350%20640%20339%20C596%20367%20551%20362%20517%20342%20C470%20367%20432%20365%20398%20345%20C352%20365%20306%20350%20270%20343%20C232%20354%20190%20350%20159%20328%20C119%20341%2077%20315%2070%20284%20C27%20281%2016%20226%2048%20169%20Z%22%2F%3E%3C%2Fsvg%3E")!important;
+    -webkit-mask-size:100% 100%!important;
+    mask-size:100% 100%!important;
+    -webkit-mask-repeat:no-repeat!important;
+    mask-repeat:no-repeat!important;
+  }
+  .admin .side-logo small{
+    display:block!important;
+    font:900 9px Nunito,sans-serif!important;
+    letter-spacing:2px!important;
+    color:#dce8fd!important;
+    margin:0!important;
+    line-height:1.4!important;
+    text-align:center!important;
+  }
+}
