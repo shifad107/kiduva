@@ -1,0 +1,1 @@
+import {requireAdmin,fail} from '../_auth.js';import {shopify} from '../_shopify.js';export default async function handler(req,res){if(req.method!=='GET')return res.status(405).end();if(!requireAdmin(req,res))return;try{const d=await shopify('query{locations(first:25){nodes{id name isActive}}}');res.json({locations:d.locations.nodes})}catch(e){fail(res,e)}}
