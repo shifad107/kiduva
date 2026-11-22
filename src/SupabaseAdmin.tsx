@@ -1,4 +1,4 @@
-import {useEffect,useState} from 'react';
+import {useEffect,useState,type FormEvent} from 'react';
 import {ArrowLeft,Box,ImagePlus,LogOut,Plus,RefreshCw,Save,Search,ShieldCheck,Trash2,X} from 'lucide-react';
 import {supabase,fetchLiveProducts,type LiveProduct,type LiveVariant} from './supabaseClient';
 
@@ -27,7 +27,7 @@ export default function SupabaseAdmin({onBack,onChanged}:Props){
  }
  useEffect(()=>{let active=true;void verify();const sub=supabase?.auth.onAuthStateChange(()=>{if(active)void verify()});return()=>{active=false;sub?.data.subscription.unsubscribe()}},[]);
  useEffect(()=>{if(authorised)void load()},[authorised]);
- async function login(e:React.FormEvent){e.preventDefault();if(!supabase)return;setBusy(true);setError('');try{const {error:e}=await supabase.auth.signInWithPassword({email,password});if(e)throw e;setPassword('');await verify()}catch(e){fail(e)}finally{setBusy(false)}}
+ async function login(e:FormEvent){e.preventDefault();if(!supabase)return;setBusy(true);setError('');try{const {error:e}=await supabase.auth.signInWithPassword({email,password});if(e)throw e;setPassword('');await verify()}catch(e){fail(e)}finally{setBusy(false)}}
  async function signOut(){await supabase?.auth.signOut();setUser(null);setAuthorised(false)}
  const newProduct=()=>{setEditId(null);setForm(blank);setUpload(null);setFormOpen(true);setError('')};
  const editProduct=(p:LiveProduct)=>{setEditId(p.id);setForm({name:p.name,category:p.category,sku:p.sku,price:String(p.price),description:p.description,sizes:[...new Set(p.kiduva_variants.map(v=>v.size))].join(', '),colours:[...new Set(p.kiduva_variants.map(v=>v.colour))].join(', '),status:p.status==='active'?'active':'draft',image_url:p.image_url||''});setUpload(null);setFormOpen(true);setError('')};
