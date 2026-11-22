@@ -190,3 +190,18 @@ footer .official-logo{width:210px;background:#fff;border-radius:12px;padding:5px
 @media(max-width:1200px){.collection-product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:850px){.collection-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.category-photo-sprite{height:190px}}
 @media(max-width:600px){.collection-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.collection-product-grid .product-info{padding:10px}.collection-product-grid .product-info h3{font-size:14px;min-height:36px}.product-add-button{font-size:9px;padding:10px 5px}.product-modal{display:block}.product-modal-photo{height:280px}.product-modal-details{padding:20px}.product-modal-details h2{font-size:23px}.category-photo-sprite{height:165px}}
+
+
+/* Precise poster crops: 5 columns × 2 rows, no adjacent outfit or caption bleed */
+.collection-product-grid .product-card{min-width:0;isolation:isolate}
+.collection-product-grid .product-image{aspect-ratio:1.1!important;height:auto!important;overflow:hidden!important;border-radius:18px 18px 0 0!important}
+.collection-product-grid .product-photo-button{inset:0;overflow:hidden!important;border-radius:18px 18px 0 0!important}
+.collection-product-grid .product-sprite{display:block!important;width:100%!important;height:100%!important;background-size:540% auto!important;background-repeat:no-repeat!important;transform:none!important;will-change:auto}
+.collection-product-grid .product-card:hover .product-sprite{transform:none!important}
+.collection-product-grid .product-info{display:flex;flex-direction:column;align-items:flex-start;min-height:166px}
+.collection-product-grid .product-info .product-add-button{margin-top:auto;padding:12px 9px;line-height:1.2;min-height:40px;white-space:normal}
+.collection-product-grid .product-info h3{min-height:0;margin:7px 0 9px}
+.collection-product-grid .product-info b{margin-bottom:14px}
+.product-modal-photo{width:100%;height:auto!important;aspect-ratio:1.1;overflow:hidden}
+.product-modal-photo .product-sprite{background-size:540% auto!important;background-repeat:no-repeat!important;transform:none!important}
+@media(max-width:600px){.collection-product-grid .product-info{min-height:185px}.collection-product-grid .product-info .product-add-button{min-height:46px;font-size:9px}}
