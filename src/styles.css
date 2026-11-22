@@ -56,3 +56,58 @@ footer .logo small{color:#ffdce8}
 button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #e95591;outline-offset:3px}
 @media(max-width:760px){.header{padding:0 4%}.logo{font-size:25px}.logo small{font-size:7px}.hero{min-height:550px;height:70vh}.hero>img{object-position:58% center}.shade{background:linear-gradient(90deg,#15355eeb 0%,#15355eaa 65%,#15355e33)}.hero-copy{left:6%;right:6%;max-width:400px}.hero h1{font-size:clamp(46px,10vw,66px);letter-spacing:-1px}.hero-copy p{font-size:13px}.hero-secondary{font-size:11px}.hero .pill{font-size:11px;padding:13px 15px}.sticker{width:85px;height:85px;right:5%;bottom:14px}.sticker b{font-size:13px}.cats img{height:185px}.product-image{height:240px}.section{padding-top:54px;padding-bottom:58px}.trust{gap:12px}.story h2{font-size:42px}}
 @media(max-width:420px){.hero{min-height:590px}.hero h1{font-size:44px}.hero-copy{top:44%}.hero-buttons{gap:10px}.hero-secondary{padding:10px}.product-image{height:195px}.cats img{height:155px}.sticker{bottom:15px}}
+
+
+/* Reference-inspired KIDUVA homepage: bright, airy, bubbly */
+:root{--k-navy:#17357e;--k-pink:#f23e92;--k-yellow:#ffc537}
+.app{overflow-x:hidden}
+.topline{background:#17357e;height:38px;font-size:12px;letter-spacing:.1px}
+.announcement{background:#fff9f1;color:#17357e;font-size:12px;padding:9px}
+.header{height:94px;background:#fffdf7;border-bottom:1px solid #f2e6cb;box-shadow:0 4px 16px #23345b0a;padding:0 7%}
+.header nav{gap:27px}
+.header nav button{font-size:14px;color:#0b2868}
+.header .logo{font-size:30px}
+.header .headtools{gap:16px}
+.cart-pill{background:#ffc537!important;border-radius:35px!important;padding:12px 20px!important;display:flex;align-items:center;gap:10px;font-weight:900;color:#102e72!important}
+.cart-pill>span{font-size:14px}
+.cart-pill i{position:static!important;background:#f13d92!important;font-size:12px!important;padding:4px 10px!important}
+.reference-hero{height:auto;min-height:620px;overflow:hidden;background:linear-gradient(115deg,#fff4e9 0%,#fffaf5 44%,#edf5ff 100%)}
+.hero-inner{max-width:1500px;margin:auto;padding:72px 7% 74px;min-height:620px;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.reference-hero .hero-copy{position:static;transform:none;color:#17357e;max-width:none}
+.hero-chip{display:inline-flex!important;background:#ffc537!important;color:#15336e!important;border:0!important;padding:10px 18px!important;border-radius:30px!important;font-size:13px!important;letter-spacing:0!important;font-weight:900}
+.reference-hero h1{font:700 clamp(54px,5.3vw,90px)/1.14 Fredoka,sans-serif;letter-spacing:-1.8px;color:#17357e;margin:24px 0 34px}
+.reference-hero h1 em{color:#f23e92}
+.reference-hero .hero-copy p{color:#586d91;font-size:19px;line-height:1.75;max-width:500px;font-weight:600}
+.reference-hero .hero-buttons{margin-top:30px}
+.reference-hero .pill,.why-cta .pill{background:#f23e92;box-shadow:none;border-radius:32px;padding:16px 28px;font-size:15px}
+.reference-hero .hero-secondary{background:transparent;border:2px solid #17357e;color:#17357e;border-radius:32px;padding:14px 26px;font-size:15px}
+.hero-art{height:420px;position:relative;display:flex;align-items:center;justify-content:center}
+.hero-brand-card{position:relative;transform:rotate(2deg);background:#fff;border-radius:38px;width:95%;min-height:300px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 28px 48px #25427321;padding:38px 15px;border:1px solid #fff}
+.hero-brand-card:before{content:"";position:absolute;inset:28px;border:3px dashed #ffc537;border-radius:100px;opacity:.8;pointer-events:none}
+.hero-brand-text{font:700 clamp(52px,5.2vw,95px)/1 Fredoka,sans-serif;color:#0c3775;letter-spacing:-3px;z-index:1}
+.hero-brand-k{color:#ffc537;text-shadow:3px 2px #17357e}
+.hero-brand-in{color:#f23e92;font-size:.5em;letter-spacing:-1px}
+.hero-brand-tagline{font:600 clamp(17px,1.7vw,27px) Fredoka;color:#17357e;margin-top:14px;z-index:1}
+.hero-brand-heart{font-size:27px;color:#ffc537;z-index:1}
+.hero-star{position:absolute;color:#ffc537;font-size:54px;z-index:2;text-shadow:0 3px 0 #f3ae16}
+.star-one{top:8px;left:5%}.star-two{top:25px;right:0}.star-three{bottom:5px;right:14%}.star-four{bottom:50px;left:1%;font-size:35px}
+.trust{background:#fffdf8}
+.why-section{background:#fffdf7;padding:80px 6% 90px}
+.why-inner{max-width:1450px;margin:auto}
+.why-section .section-title h2{font:700 clamp(32px,3.5vw,50px) Fredoka;color:#17357e}
+.why-section .section-title h2 em{font-style:normal;color:#f23e92}
+.why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.why-grid article{background:#fff;border-top:6px solid #ffc537;border-radius:28px;padding:28px 24px 30px;min-height:190px;box-shadow:0 12px 30px #172e5b08}
+.why-grid article span{font-size:25px;color:#f23e92}
+.why-grid article h3{font:600 21px Fredoka;color:#17357e;margin:12px 0}
+.why-grid article p{color:#607193;line-height:1.7;font-size:15px;margin:0}
+.why-cta{margin-top:70px;border-radius:46px;background:#17357e;color:#fff;text-align:center;padding:58px 20px 64px}
+.why-cta>span{color:#ffcf53;font-size:11px;letter-spacing:2px;font-weight:900}
+.why-cta h2{font:700 clamp(30px,3.6vw,54px)/1.16 Fredoka;color:#ffc537;margin:18px 0}
+.why-cta p{font-size:16px;line-height:1.7;margin:0 auto 26px;max-width:560px}
+.section-title h2{color:#17357e}
+.cats button{border-radius:27px}
+.product-image{border-radius:24px}
+@media(max-width:1000px){.header nav{gap:12px}.header nav button{font-size:11px}.header .headtools label{display:none}.hero-inner{gap:20px;padding:65px 5%}.reference-hero h1{font-size:clamp(50px,6vw,70px)}.hero-art{height:360px}.hero-brand-card{min-height:260px}.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.topline{font-size:9px;padding:0 6px;text-align:center}.header{height:76px;padding:0 5%}.header .logo{font-size:25px}.header nav{display:none}.cart-pill{padding:9px!important;gap:4px}.cart-pill>span{display:none}.cart-pill i{font-size:10px!important;padding:3px 7px!important}.reference-hero{min-height:0;height:auto}.hero-inner{grid-template-columns:1fr;padding:50px 6% 60px;min-height:0;gap:22px}.reference-hero .hero-copy{position:static;max-width:none}.reference-hero h1{font-size:clamp(49px,10vw,70px);margin:18px 0 20px}.reference-hero .hero-copy p{font-size:15px}.reference-hero .hero-buttons{gap:10px;margin-top:22px}.reference-hero .pill,.reference-hero .hero-secondary{font-size:12px;padding:12px 17px}.hero-art{height:260px}.hero-brand-card{min-height:210px;border-radius:28px;width:94%;padding:20px}.hero-brand-card:before{inset:18px;border-radius:60px}.hero-brand-text{font-size:clamp(50px,13vw,80px)}.hero-brand-tagline{font-size:16px}.hero-star{font-size:36px}.why-section{padding:55px 5%}.why-grid{gap:12px}.why-grid article{padding:18px 15px;min-height:175px;border-radius:20px}.why-grid article h3{font-size:17px}.why-grid article p{font-size:12px}.why-cta{margin-top:40px;padding:40px 20px;border-radius:28px}.why-cta p{font-size:13px}}
+@media(max-width:390px){.hero-brand-text{font-size:49px}.hero-art{height:220px}.hero-brand-card{min-height:185px}.why-grid{grid-template-columns:1fr}.why-grid article{min-height:0}}
