@@ -1,0 +1,1 @@
+import {sameOrigin} from '../_auth.js';export default function handler(req,res){if(req.method!=='POST')return res.status(405).end();if(!sameOrigin(req,res))return;res.setHeader('Set-Cookie','kiduva_admin=; HttpOnly; Secure; SameSite=Strict; Path=/api; Max-Age=0');res.json({ok:true});}
