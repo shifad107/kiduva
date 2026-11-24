@@ -495,3 +495,26 @@ footer .footer-brand-lockup .official-logo{
   -webkit-mask-repeat:no-repeat!important;
   mask-repeat:no-repeat!important;
 }
+
+
+/* Exact KIDUVA cloud crop traced from ORIGINAL yellow-outline PNG (1571x602).
+   Keep the brand art unmodified; mask only removes outside white canvas. */
+footer .footer-brand-lockup .official-logo,
+.admin .side-official-logo{
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  padding:0!important;
+  box-shadow:none!important;
+  clip-path:none!important;
+  -webkit-mask-image:url('/kiduva-cloud-mask.svg')!important;
+  mask-image:url('/kiduva-cloud-mask.svg')!important;
+  -webkit-mask-size:100% 100%!important;
+  mask-size:100% 100%!important;
+  -webkit-mask-repeat:no-repeat!important;
+  mask-repeat:no-repeat!important;
+  -webkit-mask-position:center!important;
+  mask-position:center!important;
+  aspect-ratio:1571 / 602!important;
+  object-fit:contain!important;
+}
