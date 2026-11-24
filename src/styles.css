@@ -451,3 +451,32 @@ footer>small{flex-basis:100%;width:100%}
  footer>div:nth-of-type(2){margin-left:0}
  footer>.admin-link{margin-left:auto}
 }
+
+
+/* Footer brand: preserve official yellow cloud line and remove rectangular white canvas.
+   Smooth SVG alpha mask follows the outer cloud silhouette, rather than a jagged polygon. */
+footer .footer-brand-lockup>.logo{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
+footer .footer-brand-lockup>.logo .official-logo{
+  display:block!important;
+  width:248px!important;
+  max-width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  clip-path:none!important;
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201580%20592%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M%2097%20264%20C%2067%20206%20100%20121%20143%2089%20C%20197%2030%20287%2020%20342%2076%20C%20374%2031%20443%2036%20479%2080%20C%20564%2058%20647%2061%20727%2043%20C%20769%2029%20800%2043%20819%2076%20C%20870%2031%20928%2049%20981%2072%20C%201047%2052%201112%2078%201144%20111%20C%201197%2063%201274%2067%201326%20113%20C%201359%20123%201365%20137%201364%20161%20C%201441%20137%201512%20183%201531%20245%20C%201565%20335%201520%20426%201441%20454%20C%201389%20518%201304%20518%201247%20498%20C%201198%20525%201129%20520%201071%20494%20C%201029%20519%20983%20533%20938%20514%20C%20892%20562%20836%20566%20791%20536%20C%20737%20571%20666%20545%20611%20518%20C%20559%20483%20509%20507%20459%20516%20C%20381%20550%20287%20541%20236%20499%20C%20161%20524%2089%20481%2075%20421%20C%2046%20391%2048%20323%2097%20264%20Z%22%2F%3E%3C%2Fsvg%3E")!important;
+  mask-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201580%20592%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22white%22%20d%3D%22M%2097%20264%20C%2067%20206%20100%20121%20143%2089%20C%20197%2030%20287%2020%20342%2076%20C%20374%2031%20443%2036%20479%2080%20C%20564%2058%20647%2061%20727%2043%20C%20769%2029%20800%2043%20819%2076%20C%20870%2031%20928%2049%20981%2072%20C%201047%2052%201112%2078%201144%20111%20C%201197%2063%201274%2067%201326%20113%20C%201359%20123%201365%20137%201364%20161%20C%201441%20137%201512%20183%201531%20245%20C%201565%20335%201520%20426%201441%20454%20C%201389%20518%201304%20518%201247%20498%20C%201198%20525%201129%20520%201071%20494%20C%201029%20519%20983%20533%20938%20514%20C%20892%20562%20836%20566%20791%20536%20C%20737%20571%20666%20545%20611%20518%20C%20559%20483%20509%20507%20459%20516%20C%20381%20550%20287%20541%20236%20499%20C%20161%20524%2089%20481%2075%20421%20C%2046%20391%2048%20323%2097%20264%20Z%22%2F%3E%3C%2Fsvg%3E")!important;
+  -webkit-mask-size:100% 100%!important;
+  mask-size:100% 100%!important;
+  -webkit-mask-position:center!important;
+  mask-position:center!important;
+  -webkit-mask-repeat:no-repeat!important;
+  mask-repeat:no-repeat!important;
+}
+footer .footer-brand-lockup{gap:14px!important}
+@media(max-width:760px){footer .footer-brand-lockup>.logo .official-logo{width:210px!important}}
