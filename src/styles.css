@@ -518,3 +518,16 @@ footer .footer-brand-lockup .official-logo,
   aspect-ratio:1571 / 602!important;
   object-fit:contain!important;
 }
+
+/* Official transparent PNG replaces all old approximate SVG/poly clipping. */
+footer .footer-brand-lockup .official-logo,
+.admin .side-official-logo {
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  clip-path:none!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+}
