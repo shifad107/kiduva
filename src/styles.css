@@ -531,3 +531,53 @@ footer .footer-brand-lockup .official-logo,
   box-shadow:none!important;
   padding:0!important;
 }
+
+
+/* KIDUVA mascot family – one optimized 5×2 transparent WEBP sprite.
+   Artwork lives in public/kiduva-pandas.webp; emoji fallback stays visible until loaded. */
+.kiduva-panda{display:block;position:relative;width:120px;height:120px;flex-shrink:0;isolation:isolate}
+.kiduva-panda .panda-fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:48px;opacity:.17}
+.kiduva-panda .panda-sprite{position:absolute;inset:0;background-image:url('/kiduva-pandas.webp');background-size:500% 200%;background-repeat:no-repeat;filter:drop-shadow(0 6px 5px rgba(20,38,72,.10))}
+.panda-hero-girl,.panda-hero-boy{position:absolute!important;z-index:4;width:115px;height:115px;pointer-events:none}
+.panda-hero-girl{left:-34px;bottom:30px;transform:rotate(-9deg)}
+.panda-hero-boy{right:-24px;bottom:19px;transform:rotate(8deg)}
+.panda-family-section{padding:63px max(5%,24px);background:linear-gradient(110deg,#fffafc,#f1f7ff);overflow:hidden;text-align:center}
+.panda-family-head small{letter-spacing:2px;font-weight:900;font-size:11px;color:#d677a4}
+.panda-family-head h2{font:600 clamp(30px,4vw,43px) Fredoka,sans-serif;color:#17365f;margin:12px 0}
+.panda-family-head h2 em{font-style:normal;color:#e884aa}
+.panda-family-head p{color:#74849b;font-size:13px;font-weight:700;line-height:1.7}
+.panda-family-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1080px;gap:14px;margin:30px auto 0}
+.panda-family-member{background:#ffffffd7;border:1px solid #f5e4ec;border-radius:20px;padding:12px 8px 15px;display:flex;align-items:center;flex-direction:column;justify-content:center;min-width:0}
+.panda-family-member .kiduva-panda{width:min(100%,135px);height:auto;aspect-ratio:1}
+.panda-family-member>span:last-child{font-size:10px;font-weight:900;color:#315279;line-height:1.3;margin-top:6px}
+.panda-newsletter-art{position:absolute;inset:0;pointer-events:none;max-width:1120px;margin:auto}
+.newsletter{position:relative;overflow:hidden}
+.panda-newsletter-art .kiduva-panda{position:absolute;top:50%;width:120px;height:120px;transform:translateY(-50%)}
+.panda-newsletter-art .kiduva-panda:first-child{left:0;transform:translateY(-50%) rotate(-7deg)}
+.panda-newsletter-art .kiduva-panda:last-child{right:0;transform:translateY(-50%) rotate(7deg)}
+.newsletter>small,.newsletter>h2,.newsletter>p,.newsletter>form{position:relative;z-index:1}
+.footer-panda-pair{display:flex;align-items:center;gap:2px;margin-left:8px}
+.footer-panda-pair .kiduva-panda{width:73px;height:73px}
+.panda-cart-empty{text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px}
+.panda-cart-empty .kiduva-panda{width:150px;height:150px}
+.panda-cart-empty p{margin:4px 0 18px}
+@media(max-width:920px){
+ .panda-family-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+ .panda-family-member{padding:9px 3px}
+ .panda-newsletter-art{opacity:.45}
+ .panda-newsletter-art .kiduva-panda{width:90px;height:90px}
+ .footer-panda-pair .kiduva-panda{width:56px;height:56px}
+}
+@media(max-width:650px){
+ .panda-family-section{padding:38px 12px}
+ .panda-family-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin-top:20px}
+ .panda-family-member{border-radius:11px;padding:5px 2px 8px}
+ .panda-family-member>span:last-child{font-size:8px}
+ .panda-hero-girl{left:-8px;bottom:3px;width:62px;height:62px}
+ .panda-hero-boy{right:-6px;bottom:0;width:62px;height:62px}
+ .panda-newsletter-art .kiduva-panda{width:58px;height:58px;top:auto;bottom:5px;transform:none}
+ .panda-newsletter-art .kiduva-panda:first-child{left:-6px;transform:none}
+ .panda-newsletter-art .kiduva-panda:last-child{right:-6px;transform:none}
+ .footer-panda-pair{width:100%;margin:0;justify-content:center}
+ .footer-panda-pair .kiduva-panda{width:60px;height:60px}
+}
