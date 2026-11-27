@@ -581,3 +581,55 @@ footer .footer-brand-lockup .official-logo,
  .footer-panda-pair{width:100%;margin:0;justify-content:center}
  .footer-panda-pair .kiduva-panda{width:60px;height:60px}
 }
+
+
+/* KIDUVA panda family: one friendly character at a time, spread through the storefront.
+   The ten-character gallery is intentionally no longer displayed. */
+.collection-showcase,
+.categories-section,
+.featured-section,
+.why-section,
+.why-cta {position:relative}
+.collection-showcase-inner,
+.categories-section>.section-title,
+.categories-section>.cats,
+.featured-section>.section-title,
+.featured-section>.products,
+.why-inner {position:relative;z-index:1}
+.kiduva-panda.panda-collection-shopping,
+.kiduva-panda.panda-categories-shopping,
+.kiduva-panda.panda-categories-sleepy,
+.kiduva-panda.panda-featured-heart,
+.kiduva-panda.panda-why-heart,
+.kiduva-panda.panda-why-sleepy {
+  position:absolute;z-index:2;pointer-events:none;
+  width:92px;height:92px;
+}
+.panda-collection-shopping{top:24px;right:2.5%;transform:rotate(8deg)}
+.panda-categories-shopping{top:14px;right:5%;transform:rotate(9deg)}
+.panda-categories-sleepy{bottom:6px;left:1%;transform:rotate(-8deg)}
+.panda-featured-heart{top:14px;right:5%;transform:rotate(8deg)}
+.panda-why-heart{top:12px;right:2%;transform:rotate(9deg)}
+.panda-why-sleepy{bottom:13px;left:3%;transform:rotate(-5deg)}
+.why-cta>.kiduva-panda {position:absolute}
+.why-cta>span:not(.kiduva-panda),.why-cta h2,.why-cta p,.why-cta button{position:relative;z-index:2}
+.panda-newsletter-art .kiduva-panda{left:auto!important;right:3%!important;top:50%;width:105px;height:105px}
+.footer-panda-pair{margin-left:8px}
+.footer-panda-pair .kiduva-panda{width:84px;height:84px}
+@media(max-width:850px){
+ .panda-collection-shopping,.panda-categories-shopping,.panda-categories-sleepy,
+ .panda-featured-heart,.panda-why-heart,.panda-why-sleepy{
+   width:66px!important;height:66px!important
+ }
+ .panda-newsletter-art .kiduva-panda{right:0!important;width:74px;height:74px}
+}
+@media(max-width:600px){
+ .panda-collection-shopping,.panda-categories-shopping,.panda-featured-heart,.panda-why-heart{
+   top:8px!important;right:5px!important;width:47px!important;height:47px!important
+ }
+ .panda-categories-sleepy{bottom:4px!important;left:0!important;width:47px!important;height:47px!important}
+ .panda-why-sleepy{bottom:4px!important;left:4px!important;width:51px!important;height:51px!important}
+ .panda-newsletter-art .kiduva-panda{right:0!important;bottom:2px!important;width:54px!important;height:54px!important}
+ .footer-panda-pair{width:auto!important;margin-left:auto!important}
+ .footer-panda-pair .kiduva-panda{width:66px;height:66px}
+}
