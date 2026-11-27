@@ -887,3 +887,16 @@ footer .footer-brand-lockup .official-logo,
  .kiduva-buddy-panel{right:0;bottom:65px;width:calc(100vw - 26px);height:min(555px,calc(100dvh - 94px));border-radius:18px}
 }
 @media(prefers-reduced-motion:reduce){.kiduva-buddy-fab{transition:none}}
+
+
+/* Accessible inner-page Back navigation */
+.kiduva-breadcrumb .kiduva-back-button{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:8px 13px;border:1px solid #e6dce8;border-radius:999px;
+  background:#fff4f9;color:#173869;font-size:12px;font-weight:900;
+  cursor:pointer;transition:background .15s ease,transform .15s ease;
+}
+.kiduva-breadcrumb .kiduva-back-button:hover{background:#fbe3f0;transform:translateX(-2px);text-decoration:none}
+.kiduva-breadcrumb .kiduva-back-button:focus-visible{outline:3px solid #e9a6cd;outline-offset:2px}
+.kiduva-breadcrumb-divider{color:#a9aeb9;margin:0 2px}
+@media(prefers-reduced-motion:reduce){.kiduva-breadcrumb .kiduva-back-button{transition:none}}
