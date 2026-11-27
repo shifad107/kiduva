@@ -58,7 +58,7 @@ const addSelected=()=>{
    say('Added to preview cart ♡');
    window.setTimeout(()=>setCartBounce(false),600);
  };
- if(start&&end&&!reduced)window.setTimeout(finish,850);else finish();
+ if(start&&end&&!reduced)window.setTimeout(finish,1900);else finish();
 };
 const productCard=(p:Product)=><article className="product-card" key={p.id}><div className="product-image"><button className="product-photo-button" onClick={()=>openProduct(p as PreviewProduct)} aria-label={`View ${p.name}`}>{typeof (p as PreviewProduct).spriteIndex==='number'?<span className="product-sprite" style={spriteStyle((p as PreviewProduct).spriteIndex!)}/>:<img src={p.image} alt={p.name}/>}</button><button className="heart" aria-label={`Wishlist ${p.name}`} onClick={()=>setLikes(a=>a.includes(p.id)?a.filter(x=>x!==p.id):[...a,p.id])}><Heart fill={likes.includes(p.id)?'currentColor':'none'}/></button></div><div className="product-info"><small>{p.category} · {(p as PreviewProduct).ageRange||'Kidswear'}</small><button className="product-name-button" onClick={()=>openProduct(p as PreviewProduct)}><h3>{p.name}</h3></button><b>{cash(p.price)}</b><button className="product-add-button" onClick={()=>openProduct(p as PreviewProduct)}><ShoppingBag size={16}/> Choose Size & Add to Cart</button></div></article>;
 const [pandasLoaded,setPandasLoaded]=useState(false);
@@ -75,7 +75,7 @@ return <>
     <span className="kiduva-splash-sparkle kiduva-splash-sparkle-four" aria-hidden="true">✧</span>
   </div>
 </div>}
-{flyingItem&&<div className="kiduva-flying-product" style={{left:flyingItem.left,top:flyingItem.top,'--fly-dx':`${flyingItem.dx}px`,'--fly-dy':`${flyingItem.dy}px`} as React.CSSProperties} aria-hidden="true">
+{flyingItem&&<div className="kiduva-flying-product" style={{left:flyingItem.left,top:flyingItem.top,'--fly-dx':`${flyingItem.dx}px`,'--fly-dy':`${flyingItem.dy}px`,'--fly-mid-x':`${flyingItem.dx*.28}px`,'--fly-mid-y':`${flyingItem.dy*.22-72}px`,'--fly-late-x':`${flyingItem.dx*.76}px`,'--fly-late-y':`${flyingItem.dy*.74-32}px`} as React.CSSProperties} aria-hidden="true">
   {typeof flyingItem.product.spriteIndex==='number'?<span className="product-sprite" style={spriteStyle(flyingItem.product.spriteIndex)}/>:<img src={flyingItem.product.image} alt=""/>}
   <span className="kiduva-fly-star">✦</span>
 </div>}
