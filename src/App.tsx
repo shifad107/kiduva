@@ -33,7 +33,7 @@ const save=async()=>{if(adminAuthenticated){try{const body={title:form.name,desc
 const saveStock=async()=>{if(adminAuthenticated){try{const p=shopifyProducts.find(x=>x.id===adjust?.id);const v=p?.variants?.nodes?.[0];if(!v||!selectedLocation)throw Error('Select a location and variant');await api('/api/admin/inventory',{method:'POST',body:JSON.stringify({inventoryItemId:v.inventoryItem.id,locationId:selectedLocation,delta:Number(delta),reason:'Owner stock adjustment'})});await loadShopify();setAdjust(null);say('Stock adjustment saved to Shopify')}catch(e){say(String(e))}return;}const n=Number(delta);if(!adjust||delta.trim()===''||!Number.isInteger(n)||adjust.stock+n<0){say('Invalid stock adjustment. Stock cannot go below zero.');return;}setItems(old=>old.map(p=>p.id===adjust.id?{...p,stock:p.stock+n}:p));setAdjust(null);say('Sample inventory updated');};
 const [chosen,setChosen]=useState<PreviewProduct|null>(null),[chosenSize,setChosenSize]=useState(''),[cartOpen,setCartOpen]=useState(false),[cartLines,setCartLines]=useState<{id:number|string;name:string;price:number;size:string}[]>([]);
 const spriteStyle=(index:number):React.CSSProperties=>({backgroundImage:'url("/kiduva-collection.png")',backgroundSize:'540% auto',backgroundPosition:`${[2.3,26.6,50.8,74.9,98.6][index%5]}% ${index<5?23.5:72.7}%`});
-const [flyingItem,setFlyingItem]=useState<{product:PreviewProduct;left:number;top:number;dx:number;dy:number}|null>(null);
+const [flyingItem,setFlyingItem]=useState<{product:PreviewProduct;left:number;top:number;dx:number;dy:number;targetX:number;targetY:number}|null>(null);
 const [cartBounce,setCartBounce]=useState(false);
 const openProduct=(p:PreviewProduct)=>{setChosen(p);setChosenSize('')};
 const addSelected=()=>{
@@ -43,12 +43,17 @@ const addSelected=()=>{
  const start=document.querySelector('.product-modal-photo')?.getBoundingClientRect();
  const end=document.querySelector('.cart-pill')?.getBoundingClientRect();
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ // The header scrolls away on long product pages: never fly to an off-screen cart.
+ // If the real cart is visible, land on it; otherwise show an on-screen floating trolley.
+ const cartVisible=!!end&&end.top>=0&&end.bottom<=window.innerHeight&&end.left>=0&&end.right<=window.innerWidth;
+ const targetX=cartVisible&&end?end.left+end.width/2:window.innerWidth-54;
+ const targetY=cartVisible&&end?end.top+end.height/2:56;
  setCart(a=>[...a,product.id]);
  setCartLines(a=>[...a,{id:product.id,name:product.name,price:product.price,size:chosenSize}]);
- if(start&&end&&!reduced){
+ if(start&&!reduced){
    const left=start.left+start.width/2-44;
    const top=start.top+start.height/2-44;
-   setFlyingItem({product,left,top,dx:end.left+end.width/2-44-left,dy:end.top+end.height/2-44-top});
+   setFlyingItem({product,left,top,dx:targetX-44-left,dy:targetY-44-top,targetX,targetY});
  }
  setChosen(null);
  const finish=()=>{
@@ -58,7 +63,7 @@ const addSelected=()=>{
    say('Added to preview cart ♡');
    window.setTimeout(()=>setCartBounce(false),600);
  };
- if(start&&end&&!reduced)window.setTimeout(finish,1900);else finish();
+ if(start&&!reduced)window.setTimeout(finish,1900);else finish();
 };
 const productCard=(p:Product)=><article className="product-card" key={p.id}><div className="product-image"><button className="product-photo-button" onClick={()=>openProduct(p as PreviewProduct)} aria-label={`View ${p.name}`}>{typeof (p as PreviewProduct).spriteIndex==='number'?<span className="product-sprite" style={spriteStyle((p as PreviewProduct).spriteIndex!)}/>:<img src={p.image} alt={p.name}/>}</button><button className="heart" aria-label={`Wishlist ${p.name}`} onClick={()=>setLikes(a=>a.includes(p.id)?a.filter(x=>x!==p.id):[...a,p.id])}><Heart fill={likes.includes(p.id)?'currentColor':'none'}/></button></div><div className="product-info"><small>{p.category} · {(p as PreviewProduct).ageRange||'Kidswear'}</small><button className="product-name-button" onClick={()=>openProduct(p as PreviewProduct)}><h3>{p.name}</h3></button><b>{cash(p.price)}</b><button className="product-add-button" onClick={()=>openProduct(p as PreviewProduct)}><ShoppingBag size={16}/> Choose Size & Add to Cart</button></div></article>;
 const [pandasLoaded,setPandasLoaded]=useState(false);
@@ -75,6 +80,7 @@ return <>
     <span className="kiduva-splash-sparkle kiduva-splash-sparkle-four" aria-hidden="true">✧</span>
   </div>
 </div>}
+{flyingItem&&<div className="kiduva-cart-landing" style={{left:flyingItem.targetX,top:flyingItem.targetY}} aria-hidden="true"><img src="/kiduva-cart-animation.svg" alt=""/><span>✦</span></div>}
 {flyingItem&&<div className="kiduva-flying-product" style={{left:flyingItem.left,top:flyingItem.top,'--fly-dx':`${flyingItem.dx}px`,'--fly-dy':`${flyingItem.dy}px`,'--fly-mid-x':`${flyingItem.dx*.28}px`,'--fly-mid-y':`${flyingItem.dy*.22-72}px`,'--fly-late-x':`${flyingItem.dx*.76}px`,'--fly-late-y':`${flyingItem.dy*.74-32}px`} as React.CSSProperties} aria-hidden="true">
   {typeof flyingItem.product.spriteIndex==='number'?<span className="product-sprite" style={spriteStyle(flyingItem.product.spriteIndex)}/>:<img src={flyingItem.product.image} alt=""/>}
   <span className="kiduva-fly-star">✦</span>
