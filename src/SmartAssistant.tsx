@@ -33,12 +33,12 @@ function replyTo(text:string,products:Item[]):Reply{
  if(rule)matches=matches.filter(p=>p.category===rule.name);
  if(max!==null)matches=matches.filter(p=>p.price<=max);
  const count=matches.length;
- const ageText=age?\` For age \${age[1]} \${/month|maasam/i.test(age[0])?'months':'years'}, please check each product's size and age details before buying.\`:'';
+ const ageText=age?` For age ${age[1]} ${/month|maasam/i.test(age[0])?'months':'years'}, please check each product's size and age details before buying.`:'';
  if(!rule&&max===null&&!age&&!asksAll){
   return {role:'bot',text:'I can help find baby frocks, rompers, newborn sets and nightwear! 🐼 Try “frocks under 900”, “rompers”, “2 years baby”, or “delivery”.'};
  }
- if(!count)return {role:'bot',text:\`No matching preview outfits found\${max!==null?' within '+money(max):''}. 🐼 Try another category or a higher budget. These are demo products; live stock is not confirmed.\`};
- return {role:'bot',text:\`I found \${count} matching preview outfit\${count===1?'':'s'}\${max!==null?' under '+money(max):''}! 💗\${ageText} Prices and availability are for preview only. Tap an outfit to view sizes.\`,items:matches.slice(0,3)};
+ if(!count)return {role:'bot',text:`No matching preview outfits found${max!==null?' within '+money(max):''}. 🐼 Try another category or a higher budget. These are demo products; live stock is not confirmed.`};
+ return {role:'bot',text:`I found ${count} matching preview outfit${count===1?'':'s'}${max!==null?' under '+money(max):''}! 💗${ageText} Prices and availability are for preview only. Tap an outfit to view sizes.`,items:matches.slice(0,3)};
 }
 export default function SmartAssistant({products,onProduct,onShop,hidden=false}:Props){
  const [open,setOpen]=useState(false);
@@ -56,7 +56,7 @@ export default function SmartAssistant({products,onProduct,onShop,hidden=false}:
   {open&&<section className="kiduva-buddy-panel" role="dialog" aria-label="KIDUVA smart shopping assistant">
    <header className="kiduva-buddy-head"><div className="kiduva-buddy-avatar" aria-hidden="true">🐼</div><div><strong>KIDUVA Shopping Buddy</strong><small>Free smart helper · no paid AI</small></div><button type="button" aria-label="Close shopping assistant" onClick={()=>setOpen(false)}><X size={20}/></button></header>
    <div className="kiduva-buddy-messages" aria-live="polite">
-    {messages.map((m,i)=><div key={i} className={\`kiduva-buddy-bubble \${m.role==='user'?'kiduva-buddy-user':'kiduva-buddy-bot'}\`}><p>{m.text}</p>{m.items&&<div className="kiduva-buddy-recs">{m.items.map(p=><button key={p.id} onClick={()=>{onProduct(p.id);setOpen(false)}}><ShoppingBag size={16}/><span><b>{p.name}</b><small>{p.category} · {money(p.price)} (preview)</small></span><ArrowRight size={16}/></button>)}</div>}</div>)}
+    {messages.map((m,i)=><div key={i} className={`kiduva-buddy-bubble ${m.role==='user'?'kiduva-buddy-user':'kiduva-buddy-bot'}`}><p>{m.text}</p>{m.items&&<div className="kiduva-buddy-recs">{m.items.map(p=><button key={p.id} onClick={()=>{onProduct(p.id);setOpen(false)}}><ShoppingBag size={16}/><span><b>{p.name}</b><small>{p.category} · {money(p.price)} (preview)</small></span><ArrowRight size={16}/></button>)}</div>}</div>)}
     <div ref={endRef}/>
    </div>
    <div className="kiduva-buddy-chips">{['Frocks','Rompers','Under ₹800','Delivery info'].map(q=><button key={q} onClick={()=>send(q)}>{q}</button>)}</div>
