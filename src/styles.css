@@ -1017,3 +1017,19 @@ body{background:var(--k-cream)}
  opacity:.28;filter:blur(8px);
 }
 .panda-sprite{filter:drop-shadow(0 6px 4px #0b39652a) saturate(1.16)!important}
+
+
+/* Yellow-cap KIDUVA mascot added from user's design reference */
+.hero-art{position:relative}
+.kiduva-shopping-panda-hero{
+ position:absolute;z-index:5;right:-22px;bottom:4px;
+ width:clamp(130px,14vw,205px);height:auto;object-fit:contain;
+ filter:drop-shadow(0 9px 12px rgba(17,54,100,.20));
+ pointer-events:none;
+}
+@media(max-width:767px){
+ .hero-art .kiduva-panda.panda-hero-girl{display:none!important}
+ .kiduva-shopping-panda-hero{
+  display:block;right:-3px;bottom:1px;width:clamp(103px,29vw,145px);
+ }
+}
