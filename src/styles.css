@@ -674,3 +674,39 @@ footer .footer-brand-lockup .official-logo,
   animation:none!important;transition:none!important
  }
 }
+
+
+/* KIDUVA add-to-cart: product flies from selected outfit into header cart. */
+.kiduva-flying-product{
+  position:fixed;z-index:100001;pointer-events:none;
+  width:88px;height:88px;overflow:visible;border:3px solid #fff;
+  border-radius:18px;background:#fff0f6;
+  box-shadow:0 11px 27px rgba(24,53,95,.23);
+  transform-origin:center center;
+  animation:kiduva-fly-to-cart .85s cubic-bezier(.2,.65,.32,1) both;
+}
+.kiduva-flying-product>.product-sprite,
+.kiduva-flying-product>img{position:absolute;inset:0;width:100%;height:100%;border-radius:14px;object-fit:cover}
+.kiduva-flying-product>.product-sprite{display:block;background-repeat:no-repeat}
+.kiduva-fly-star{position:absolute;top:-14px;right:-9px;color:#f8b93c;font-size:27px;text-shadow:0 1px 4px white;animation:kiduva-star-spin .55s ease-in-out infinite alternate}
+@keyframes kiduva-fly-to-cart{
+  0%{opacity:1;transform:translate(0,0) scale(1) rotate(-5deg)}
+  30%{opacity:1;transform:translate(calc(var(--fly-dx)*.27),calc(var(--fly-dy)*.17 - 55px)) scale(.9) rotate(6deg)}
+  74%{opacity:1;transform:translate(calc(var(--fly-dx)*.76),calc(var(--fly-dy)*.72 - 26px)) scale(.54) rotate(10deg)}
+  100%{opacity:0;transform:translate(var(--fly-dx),var(--fly-dy)) scale(.18) rotate(0)}
+}
+@keyframes kiduva-star-spin{to{transform:rotate(28deg) scale(1.2)}}
+.cart-pill--bounce{animation:kiduva-cart-bump .55s cubic-bezier(.15,.7,.3,1)}
+@keyframes kiduva-cart-bump{0%,100%{transform:scale(1)}35%{transform:scale(1.17) rotate(-5deg)}68%{transform:scale(.96) rotate(3deg)}}
+.kiduva-cart-illustration{height:142px;position:relative;display:grid;place-items:center;margin:4px auto 12px;max-width:260px}
+.kiduva-cart-illustration img{width:172px;max-height:140px;object-fit:contain;filter:drop-shadow(0 7px 7px rgba(19,52,98,.12))}
+.kiduva-cart-sparkle{position:absolute;right:10%;top:13%;color:#ed7eb0;font-size:25px;animation:kiduva-cart-twinkle 1.7s ease-in-out infinite}
+@keyframes kiduva-cart-twinkle{50%{opacity:.45;transform:scale(1.2) rotate(20deg)}}
+@media(max-width:600px){
+ .kiduva-flying-product{width:72px;height:72px}
+ .kiduva-cart-illustration{height:115px}
+ .kiduva-cart-illustration img{width:142px;max-height:113px}
+}
+@media(prefers-reduced-motion:reduce){
+ .kiduva-flying-product,.cart-pill--bounce,.kiduva-cart-sparkle,.kiduva-fly-star{animation:none!important}
+}
