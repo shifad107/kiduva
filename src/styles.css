@@ -943,3 +943,93 @@ footer .footer-brand-lockup .official-logo,
     right:7px!important;
   }
 }
+
+
+/* 2026 KIDUVA official-logo palette: let the yellow/pink/teal K lead the brand. */
+:root{
+  --k-navy:#10366c;
+  --k-pink:#f22582;
+  --k-yellow:#ffbf12;
+  --k-teal:#05b8b1;
+  --k-cream:#fffdf8;
+  --k-soft-pink:#fff0f7;
+  --k-soft-teal:#e7faf7;
+}
+body{background:var(--k-cream)}
+.topline{background:var(--k-navy)!important;color:#fff}
+.announcement{
+ background:linear-gradient(100deg,#fff4ca 0%,#ffe7f1 48%,#dcf9f4 100%)!important;
+ color:var(--k-navy)!important;
+ border-bottom:2px solid #ffbf124d
+}
+.header{background:#fff!important;border-bottom:2px solid #ffbf1240!important}
+.header nav button:hover,
+.header nav button:focus-visible{color:var(--k-pink)!important}
+.cart-pill{background:var(--k-yellow)!important;color:var(--k-navy)!important}
+.cart-pill i{background:var(--k-pink)!important;color:#fff!important}
+.reference-hero{
+ background:
+ radial-gradient(circle at 76% 31%,#ffdfecbd 0%,transparent 36%),
+ radial-gradient(circle at 22% 68%,#fff0add4 0%,transparent 40%),
+ linear-gradient(110deg,#fffaf0,#fff7fb 65%,#e9faf8)!important;
+}
+.reference-hero h1,.kiduva-page-heading h1,.section-title h2{color:var(--k-navy)!important}
+.reference-hero h1 em,.section-title h2 em{color:var(--k-pink)!important}
+.hero .pill,.hero-buttons .pill,.kiduva-home-more .pill,.kiduva-page-bottom .pill,
+.kiduva-product-detail-info .pill,.kiduva-account-preview .pill,.kiduva-contact-form .pill{
+ background:var(--k-yellow)!important;color:var(--k-navy)!important;
+ border-color:var(--k-yellow)!important;
+ box-shadow:0 5px 0 #dc991f2b;
+}
+.hero-secondary,.kiduva-back-button{border-color:var(--k-teal)!important;color:var(--k-navy)!important}
+.trust{border-block:2px solid #0bb8af30;background:#f2fffc}
+.trust svg{color:var(--k-teal)!important}
+.section-title small,.kiduva-page-heading>small{color:var(--k-pink)!important}
+.cats button:nth-child(4n + 1),.kiduva-category-card:nth-child(4n + 1){border-bottom:5px solid var(--k-yellow)}
+.cats button:nth-child(4n + 2),.kiduva-category-card:nth-child(4n + 2){border-bottom:5px solid var(--k-pink)}
+.cats button:nth-child(4n + 3),.kiduva-category-card:nth-child(4n + 3){border-bottom:5px solid var(--k-teal)}
+.cats button:nth-child(4n),.kiduva-category-card:nth-child(4n){border-bottom:5px solid var(--k-navy)}
+.collection-showcase,.categories-section{background:linear-gradient(155deg,#fffdf8,#f8fffd)}
+.featured-section{background:linear-gradient(130deg,#fff3f8,#fff9e5)!important}
+.why-grid article:nth-child(4n + 1){border-top-color:var(--k-yellow)!important}
+.why-grid article:nth-child(4n + 2){border-top-color:var(--k-pink)!important}
+.why-grid article:nth-child(4n + 3){border-top-color:var(--k-teal)!important}
+.why-grid article:nth-child(4n){border-top-color:var(--k-navy)!important}
+.why-cta{background:linear-gradient(135deg,#10366c 0%,#174a81 67%,#087d81 100%)!important}
+.why-cta h2{color:var(--k-yellow)!important}
+.newsletter{background:linear-gradient(120deg,#fff2f7 0%,#fff8de 50%,#e3f9f7 100%)!important}
+.kiduva-page-heading{background:linear-gradient(115deg,#fff4cb,#fff0f8 53%,#e6faf5)!important}
+.kiduva-filter-bar .filters button.chosen{background:var(--k-navy)!important;color:white!important}
+.kiduva-buddy-fab{background:linear-gradient(135deg,var(--k-yellow) 0%,var(--k-pink) 56%,var(--k-teal) 100%)!important;color:var(--k-navy)!important}
+.kiduva-buddy-head{background:linear-gradient(105deg,#fff1c7,#ffe7f3 56%,#ddfaf5)!important}
+.kiduva-buddy-form>button{background:var(--k-teal)!important;color:#072d40!important}
+.kiduva-buddy-user{background:var(--k-navy)!important}
+.kiduva-buddy-chips button{border-color:#ffbe336b!important;color:#922b68}
+.kiduva-splash{background:linear-gradient(135deg,#fff6d9 0%,#fff0f9 52%,#e4faf6 100%)!important}
+
+/* Panda mascots: preserve original art, add vivid official K-colour accents. */
+.kiduva-panda{isolation:isolate}
+.kiduva-panda::before{
+ content:"";position:absolute;z-index:-1;
+ inset:14% 7% 5%;
+ border-radius:50%;
+ background:conic-gradient(from 32deg,#ffbf12 0 29%,#f22582 29% 56%,#05b8b1 56% 79%,#ffbf12 79%);
+ opacity:.28;filter:blur(8px);
+}
+.kiduva-panda::after{
+ content:"K";position:absolute;z-index:3;right:3%;bottom:5%;
+ width:25%;aspect-ratio:1;display:grid;place-items:center;
+ border-radius:9px;border:1.5px solid #ffbf12;
+ background:#fffdf7;
+ font:900 clamp(10px,1.5vw,18px)/1 Arial,sans-serif;
+ color:#ffbf12;
+ text-shadow:1px 0 var(--k-pink),-1px 1px var(--k-teal);
+ box-shadow:0 2px 7px #123b6530;
+ transform:rotate(-12deg);
+ pointer-events:none;
+}
+.panda-sprite{filter:drop-shadow(0 6px 4px #0b39652a) saturate(1.16)!important}
+.kiduva-panda.panda-hero-girl::after,.kiduva-panda.panda-hero-boy::after{background:#fff;color:var(--k-yellow);border-color:var(--k-teal)}
+@media(max-width:767px){
+ .kiduva-panda::after{border-radius:5px;font-size:11px}
+}
