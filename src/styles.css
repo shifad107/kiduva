@@ -848,3 +848,42 @@ footer .footer-brand-lockup .official-logo,
  .kiduva-cart-item h3{font-size:14px}
  .kiduva-cart-item strong{font-size:12px}
 }
+
+
+/* KIDUVA Smart Shopping Buddy — free on-device rules, no paid API */
+.kiduva-buddy-root{position:fixed;bottom:23px;right:22px;z-index:150000;font-family:Arial,sans-serif;color:#193763}
+.kiduva-buddy-fab{height:62px;width:62px;display:flex;align-items:center;justify-content:center;position:relative;border:3px solid white;border-radius:50%;background:linear-gradient(145deg,#244c94,#122f69);color:white;box-shadow:0 10px 27px #0d307350;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.kiduva-buddy-fab:hover{transform:translateY(-3px);box-shadow:0 14px 30px #0d307360}
+.kiduva-buddy-fab-star{position:absolute;right:9px;top:9px;color:#ffd257}
+.kiduva-buddy-panel{position:absolute;bottom:76px;right:0;width:min(380px,calc(100vw - 26px));height:min(555px,calc(100dvh - 116px));display:flex;flex-direction:column;overflow:hidden;border:1px solid #f6deed;background:#fff;border-radius:23px;box-shadow:0 15px 70px #0b2a6245}
+.kiduva-buddy-head{display:flex;align-items:center;gap:11px;background:linear-gradient(100deg,#f9eaf3,#eff7ff);padding:13px 15px;border-bottom:1px solid #f1e7ee;flex:0 0 auto}
+.kiduva-buddy-avatar{height:43px;width:43px;display:grid;place-items:center;background:#fff;border-radius:50%;font-size:25px}
+.kiduva-buddy-head>div:nth-child(2){display:flex;flex-direction:column;gap:4px;flex:1}
+.kiduva-buddy-head strong{font-size:13px;font-weight:900;color:#173869}
+.kiduva-buddy-head small{font-size:9px;color:#647d9c;font-weight:800}
+.kiduva-buddy-head>button{border:0;background:transparent;color:#173869;cursor:pointer;padding:6px}
+.kiduva-buddy-messages{flex:1;min-height:0;overflow-y:auto;background:#fffbff;padding:17px 12px;display:flex;flex-direction:column;gap:12px;overscroll-behavior:contain}
+.kiduva-buddy-bubble{max-width:92%;border-radius:15px;padding:11px 12px;font-size:12px;line-height:1.6;word-break:break-word}
+.kiduva-buddy-bubble p{margin:0}
+.kiduva-buddy-bot{background:#f0f5ff;border:1px solid #e2ecfc;color:#294873;align-self:flex-start;border-bottom-left-radius:4px}
+.kiduva-buddy-user{background:#1a4382;color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.kiduva-buddy-recs{display:flex;flex-direction:column;gap:7px;margin-top:11px}
+.kiduva-buddy-recs button{width:100%;display:flex;align-items:center;gap:8px;background:white;color:#214b82;border:1px solid #e3e9f3;border-radius:11px;padding:9px 7px;text-align:left;cursor:pointer}
+.kiduva-buddy-recs button:hover{background:#fff4fa}
+.kiduva-buddy-recs button>span{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
+.kiduva-buddy-recs button b{font-size:11px;line-height:1.4}
+.kiduva-buddy-recs button small{font-size:10px;color:#8394a8}
+.kiduva-buddy-chips{display:flex;gap:6px;overflow-x:auto;padding:10px 12px 5px;background:white;flex-shrink:0;scrollbar-width:thin}
+.kiduva-buddy-chips button{background:#fff5fa;border:1px solid #eed4e3;border-radius:25px;padding:7px 9px;white-space:nowrap;color:#8d3a72;font-size:10px;font-weight:800;cursor:pointer}
+.kiduva-buddy-form{display:flex;gap:7px;align-items:center;padding:8px 11px 5px;background:white;flex-shrink:0}
+.kiduva-buddy-form input{width:100%;min-width:0;flex:1;border:1px solid #e1dfe9;border-radius:20px;padding:11px 13px;outline-color:#b78cd1;font-size:12px}
+.kiduva-buddy-form>button{height:37px;width:39px;display:grid;place-items:center;border:0;border-radius:50%;background:#174178;color:white;cursor:pointer;flex-shrink:0}
+.kiduva-buddy-form>button:disabled{opacity:.5;cursor:default}
+.kiduva-buddy-panel footer{display:block!important;background:white!important;padding:7px 12px 10px!important;margin:0!important;min-height:0!important;font-size:9px!important;line-height:1.5!important;color:#7a8494!important;text-align:center!important;flex-shrink:0!important}
+.kiduva-buddy-panel footer button{background:none;border:0;color:#24518e;font-weight:900;font-size:9px;cursor:pointer;padding:0 3px}
+@media(max-width:600px){
+ .kiduva-buddy-root{right:13px;bottom:14px}
+ .kiduva-buddy-fab{width:55px;height:55px}
+ .kiduva-buddy-panel{right:0;bottom:65px;width:calc(100vw - 26px);height:min(555px,calc(100dvh - 94px));border-radius:18px}
+}
+@media(prefers-reduced-motion:reduce){.kiduva-buddy-fab{transition:none}}
