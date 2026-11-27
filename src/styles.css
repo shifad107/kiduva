@@ -911,3 +911,35 @@ footer .footer-brand-lockup .official-logo,
 .kiduva-quantity-control button:disabled{opacity:.35;cursor:not-allowed}
 .kiduva-quantity-control output{display:grid;place-items:center;width:42px;font-size:14px;font-weight:900;color:#173869}
 @media(max-width:600px){.kiduva-quantity-row{margin:11px 0 14px}.kiduva-quantity-control button{width:40px;height:40px}}
+
+
+/* Mobile-only panda cleanup: keep one hero panda and one newsletter panda.
+   Keep an individual panda on interior page banners and empty cart states. */
+@media(max-width:767px){
+  .kiduva-panda.panda-hero-boy,
+  .kiduva-panda.panda-collection-shopping,
+  .kiduva-panda.panda-categories-shopping,
+  .kiduva-panda.panda-categories-sleepy,
+  .kiduva-panda.panda-featured-heart,
+  .kiduva-panda.panda-why-heart,
+  .kiduva-panda.panda-why-sleepy,
+  .footer-panda-pair{
+    display:none!important;
+  }
+  .kiduva-panda.panda-hero-girl{
+    width:66px!important;
+    height:66px!important;
+    left:2px!important;
+    bottom:4px!important;
+  }
+  .panda-newsletter-art .kiduva-panda{
+    width:55px!important;
+    height:55px!important;
+    opacity:.9;
+  }
+  .kiduva-page-panda{
+    width:76px!important;
+    height:76px!important;
+    right:7px!important;
+  }
+}
