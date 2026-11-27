@@ -900,3 +900,14 @@ footer .footer-brand-lockup .official-logo,
 .kiduva-breadcrumb .kiduva-back-button:focus-visible{outline:3px solid #e9a6cd;outline-offset:2px}
 .kiduva-breadcrumb-divider{color:#a9aeb9;margin:0 2px}
 @media(prefers-reduced-motion:reduce){.kiduva-breadcrumb .kiduva-back-button{transition:none}}
+
+
+/* Size and quantity selector for KIDUVA preview product pages and modals */
+.kiduva-quantity-row{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:13px 0 15px;width:100%;max-width:390px}
+.kiduva-quantity-row>span{font-size:13px;font-weight:900;color:#315177}
+.kiduva-quantity-control{display:flex;align-items:center;overflow:hidden;border:1px solid #e5d4e2;border-radius:14px;background:#fff}
+.kiduva-quantity-control button{display:grid;place-items:center;width:43px;height:42px;border:0;background:#fff5fa;color:#1b4179;font-size:22px;font-weight:800;cursor:pointer}
+.kiduva-quantity-control button:hover:not(:disabled){background:#f9e5f1}
+.kiduva-quantity-control button:disabled{opacity:.35;cursor:not-allowed}
+.kiduva-quantity-control output{display:grid;place-items:center;width:42px;font-size:14px;font-weight:900;color:#173869}
+@media(max-width:600px){.kiduva-quantity-row{margin:11px 0 14px}.kiduva-quantity-control button{width:40px;height:40px}}
