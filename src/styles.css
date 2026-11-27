@@ -633,3 +633,44 @@ footer .footer-brand-lockup .official-logo,
  .footer-panda-pair{width:auto!important;margin-left:auto!important}
  .footer-panda-pair .kiduva-panda{width:66px;height:66px}
 }
+
+
+/* KIDUVA.IN welcome entrance – 2s initial visit, uses the official transparent logo. */
+.kiduva-splash{
+ position:fixed;inset:0;z-index:99999;
+ display:grid;place-items:center;
+ background:linear-gradient(150deg,#fff8f5 0%,#fff4f9 55%,#f3f8ff 100%);
+ opacity:1;visibility:visible;
+ transition:opacity .4s ease,visibility .4s ease;
+}
+.kiduva-splash--exit{opacity:0;visibility:hidden;pointer-events:none}
+.kiduva-splash-inner{position:relative;width:min(88vw,480px);padding:48px 24px;display:grid;place-items:center}
+.kiduva-splash-logo{
+ display:block;position:relative;z-index:1;width:min(78vw,390px);height:auto;
+ object-fit:contain;background:transparent;border:0;box-shadow:none;
+ filter:drop-shadow(0 12px 22px rgba(26,55,98,.10));
+ animation:kiduva-splash-appear .7s cubic-bezier(.19,1,.29,1) both;
+}
+.kiduva-splash-sparkle{position:absolute;z-index:0;color:#f1bd55;font-size:25px;pointer-events:none;animation:kiduva-splash-sparkle 1.4s ease-in-out infinite}
+.kiduva-splash-sparkle-one{left:10%;top:8%;color:#ed8caf}
+.kiduva-splash-sparkle-two{right:8%;top:13%;animation-delay:.3s}
+.kiduva-splash-sparkle-three{left:15%;bottom:11%;animation-delay:.6s}
+.kiduva-splash-sparkle-four{right:16%;bottom:9%;color:#ed8caf;animation-delay:.9s}
+@keyframes kiduva-splash-appear{
+ from{opacity:0;transform:scale(.88) translateY(12px)}
+ to{opacity:1;transform:scale(1) translateY(0)}
+}
+@keyframes kiduva-splash-sparkle{
+ 0%,100%{opacity:.45;transform:translateY(0) scale(.9)}
+ 50%{opacity:1;transform:translateY(-8px) scale(1.16)}
+}
+@media(max-width:600px){
+ .kiduva-splash-inner{width:95vw;padding:38px 18px}
+ .kiduva-splash-logo{width:min(85vw,320px)}
+ .kiduva-splash-sparkle{font-size:19px}
+}
+@media(prefers-reduced-motion:reduce){
+ .kiduva-splash,.kiduva-splash-logo,.kiduva-splash-sparkle{
+  animation:none!important;transition:none!important
+ }
+}
