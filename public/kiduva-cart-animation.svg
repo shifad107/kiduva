@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 310" role="img" aria-labelledby="title">
+<title id="title">KIDUVA shopping trolley</title>
+<defs>
+<linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6faff"/><stop offset=".35" stop-color="#9eaabd"/><stop offset=".63" stop-color="#e9f0fa"/><stop offset="1" stop-color="#748397"/></linearGradient>
+<linearGradient id="pink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffa2ce"/><stop offset="1" stop-color="#ea4a91"/></linearGradient>
+<linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#286db6"/><stop offset="1" stop-color="#092f68"/></linearGradient>
+</defs>
+<g stroke="#33465f" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M34 39 L69 39 L95 87 L282 97 L256 208 L120 208 L93 87" fill="none" stroke="url(#steel)" stroke-width="13"/>
+<path d="M93 86 L297 93 L276 196 L123 204 Z" fill="#f6f9fe" stroke="url(#navy)" stroke-width="7"/>
+<path d="M104 100 L290 107 M107 124 L284 130 M112 150 L279 153 M117 176 L273 178" stroke="#8190a7" stroke-width="5" fill="none"/>
+<path d="M130 91 L140 197 M158 94 L165 199 M188 96 L188 199 M218 97 L210 197 M247 100 L233 197" stroke="#8b98ab" stroke-width="5" fill="none"/>
+<path d="M112 216 L271 216 M128 216 L94 264 M252 216 L275 265 M97 263 L275 263" fill="none" stroke="url(#steel)" stroke-width="11"/>
+<path d="M39 39 L91 40" fill="none" stroke="url(#pink)" stroke-width="15"/>
+<path d="M35 38 L45 38 M87 40 L97 42" stroke="url(#navy)" stroke-width="12"/>
+<path d="M101 257 L101 277 M269 257 L269 277" stroke="url(#steel)" stroke-width="9"/>
+<g fill="url(#navy)"><circle cx="99" cy="282" r="16"/><circle cx="269" cy="282" r="16"/></g>
+<g fill="#fff"><circle cx="99" cy="282" r="7"/><circle cx="269" cy="282" r="7"/></g>
+</g>
+<g transform="translate(150 130)">
+<path d="M-42 -22 Q-48 -44 -25 -42 Q-13 -50 0 -42 Q18 -49 28 -39 Q46 -44 49 -25 Q61 -12 47 0 Q52 20 31 22 Q15 35 1 25 Q-13 37 -29 24 Q-51 22 -48 2 Q-64 -9 -42 -22Z" fill="#fff" stroke="#f2c86c" stroke-width="4"/>
+<path d="M-27 -19 v22 M-28 -9 L-14 -20 M-26 -9 L-12 3" stroke="#fabb28" stroke-width="7" stroke-linecap="round"/>
+<path d="M-26 -7 L-12 -20" stroke="#f03792" stroke-width="7" stroke-linecap="round"/>
+<path d="M-24 -8 L-11 2" stroke="#08b8ae" stroke-width="7" stroke-linecap="round"/>
+<text x="-6" y="2" font-family="Arial,sans-serif" font-size="18" font-weight="900" fill="#13386d">iduva</text><text x="39" y="2" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#ea3989">.in</text>
+</g>
+</svg>
